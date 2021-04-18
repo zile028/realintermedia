@@ -1,2 +1,81 @@
 @import "starter";
 @import "mixins";
+
+body {
+    @include flex(space-between, flex-start);
+}
+aside {
+    @include flex(center, center, column);
+    flex: 0 0 450px;
+    min-height: 100vh;
+    background-color: $navColor;
+    padding: 0px 50px;
+    .logo {
+        img {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+    ul {
+        width: 100%;
+        margin-top: 20px;
+        li {
+            border-bottom: 3px solid $border;
+            margin-bottom: 60px;
+            text-align: right;
+            transition: $transition;
+            a {
+                transition: $transition;
+                text-transform: uppercase;
+                color: $white;
+                font-size: 1.1rem;
+                font-weight: 700;
+                letter-spacing: 3px;
+            }
+            &:hover {
+                border-bottom: 3px solid $fourthBg;
+                a {
+                    color: $lightGray;
+                }
+            }
+        }
+    }
+    div {
+        text-align: right;
+        width: 100%;
+        i {
+            font-size: 2.5rem;
+            color: $white;
+            margin-left: 20px;
+            transition: $transition;
+            &:hover {
+                color: $fourthBg;
+            }
+        }
+    }
+}
+main {
+    flex: 1;
+}
+
+// header
+header {
+    background-image: linear-gradient(rgba($primaryViolet, 0.9), rgba($primaryViolet, 0.9)), url(../img/circle.png);
+    min-height: 100vh;
+    @include flex(center, flex-start, column);
+    article {
+        h1 {
+            color: $white;
+            font-size: 5rem;
+            margin-bottom: 40px;
+        }
+        p {
+            color: $lightGray;
+            font-size: 1.7rem;
+            margin-bottom: 40px;
+        }
+        button {
+            @include btn(transparent, $lightGray);
+        }
+    }
+}

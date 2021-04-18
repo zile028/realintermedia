@@ -53,11 +53,9 @@ a {
 }
 img {
     display: block;
+    width: 100%;
 }
 .container {
-    max-width: 1140px;
+    width: 90%;
     margin: 0 auto;
-    @media (max-width: 769px) {
-        width: 90%;
-    }
 }

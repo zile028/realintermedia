@@ -17,13 +17,15 @@
     font-family: $textFont;
     background-color: $bgColor;
     text-transform: uppercase;
-    border: none;
+    border: 2px solid $borderLightGray;
+    border-radius: 30px;
     font-size: 1rem;
     margin-top: 20px;
     color: $white;
-    //font-weight: 600;
+    font-weight: 700;
+    letter-spacing: 2px;
     font-size: 1rem;
-    padding: 15px 40px;
+    padding: 20px 40px;
     cursor: pointer;
     transition: background-color $transition;
     &:hover {
