@@ -52,9 +52,21 @@ h2 {
   margin-bottom: 30px;
 }
 
+@media (max-width: 767px) {
+  h2 {
+    font-size: 2.7rem;
+  }
+}
+
 p {
   color: rgba(211, 211, 211, 0.7);
   font-size: 1.3rem;
+}
+
+@media (max-width: 767px) {
+  p {
+    font-size: 1rem;
+  }
 }
 
 button {
@@ -99,6 +111,16 @@ body {
   height: 100vh;
 }
 
+@media (max-width: 767px) {
+  body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
+}
+
 aside {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -123,9 +145,87 @@ aside {
   padding: 0px 50px;
 }
 
+@media (max-width: 767px) {
+  aside {
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+    position: fixed;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+  }
+}
+
 aside .logo img {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  aside .logo img {
+    margin: 0;
+    height: 80%;
+  }
+}
+
+@media (max-width: 767px) {
+  aside .logo {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+
+aside .btnMenu {
+  position: relative;
+  width: 100%;
+}
+
+aside .btnMenu i {
+  display: none;
+  font-size: 2.5rem;
+  color: #fff;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  text-align: right;
+}
+
+aside .btnMenu i:hover {
+  color: #b74e91;
+}
+
+@media (max-width: 767px) {
+  aside .btnMenu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 10px 5%;
+    height: 60px;
+    top: 0;
+    left: 0;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  aside .btnMenu i {
+    display: block;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    cursor: pointer;
+  }
 }
 
 aside ul {
@@ -133,12 +233,33 @@ aside ul {
   margin-top: 20px;
 }
 
+@media (max-width: 767px) {
+  aside ul {
+    margin-top: 0px;
+    padding: 20px 20px;
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    height: 100vh;
+    width: 100vw;
+    background-color: #5e42a6;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+  }
+}
+
 aside ul li {
   border-bottom: 3px solid #765eb3;
-  margin-bottom: 60px;
+  padding-top: 60px;
   text-align: right;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
+}
+
+@media (max-width: 767px) {
+  aside ul li {
+    background-color: #5e42a6;
+  }
 }
 
 aside ul li a {
@@ -159,12 +280,19 @@ aside ul li:hover a {
   color: rgba(211, 211, 211, 0.7);
 }
 
-aside div {
+aside .social {
   text-align: right;
   width: 100%;
+  margin-top: 60px;
 }
 
-aside div i {
+@media (max-width: 767px) {
+  aside .social {
+    margin-top: 0px;
+  }
+}
+
+aside .social i {
   font-size: 2.5rem;
   color: #fff;
   margin-left: 20px;
@@ -172,7 +300,13 @@ aside div i {
   transition: 0.3s ease;
 }
 
-aside div i:hover {
+@media (max-width: 767px) {
+  aside .social i {
+    font-size: 1.5rem;
+  }
+}
+
+aside .social i:hover {
   color: #b74e91;
 }
 
@@ -189,6 +323,9 @@ main {
 header {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(94, 66, 166, 0.9)), to(rgba(94, 66, 166, 0.9))), url(../img/circle.png);
   background-image: linear-gradient(rgba(94, 66, 166, 0.9), rgba(94, 66, 166, 0.9)), url(../img/circle.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -218,6 +355,13 @@ header article h1 {
   margin-bottom: 40px;
 }
 
+@media (max-width: 767px) {
+  header article h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+}
+
 .services article {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -234,6 +378,15 @@ header article h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+@media (max-width: 767px) {
+  .services article {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .services article:nth-child(1) {
@@ -276,13 +429,21 @@ header article h1 {
   padding: 50px 0 50px 50px;
 }
 
-.services article div:last-child p {
-  font-size: 1.3rem;
+@media (max-width: 767px) {
+  .services article div:last-child {
+    padding: 30px;
+  }
 }
 
 .whatWeDo {
   background-color: #b74e91;
   padding: 70px 0;
+}
+
+@media (max-width: 767px) {
+  .whatWeDo {
+    padding: 30px 0;
+  }
 }
 
 .whatWeDo .cards {
@@ -294,9 +455,9 @@ header article h1 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -325,8 +486,13 @@ header article h1 {
       -ms-flex-direction: row;
           flex-direction: row;
   border: 2px solid rgba(211, 211, 211, 0.3);
-  height: auto;
   background-color: rgba(211, 211, 211, 0.3);
+}
+
+@media (max-width: 767px) {
+  .whatWeDo .cards .wrapper {
+    padding: 50px 50px;
+  }
 }
 
 .whatWeDo .cards .wrapper div:first-child {
@@ -388,6 +554,15 @@ header article h1 {
   margin-top: 20px;
 }
 
+@media (max-width: 767px) {
+  .contact article:last-child {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .contact article form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -410,10 +585,25 @@ header article h1 {
   padding-right: 20px;
 }
 
+@media (max-width: 767px) {
+  .contact article form {
+    padding: 0;
+  }
+}
+
 .contact article form input {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 48%;
           flex: 0 0 48%;
+}
+
+@media (max-width: 767px) {
+  .contact article form input {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    margin-bottom: 20px;
+  }
 }
 
 .contact article form textarea {
@@ -422,6 +612,12 @@ header article h1 {
           flex: 0 0 100%;
   margin: 20px 0;
   height: 400px;
+}
+
+@media (max-width: 767px) {
+  .contact article form textarea {
+    margin-top: 0;
+  }
 }
 
 .contact article form input,
@@ -458,14 +654,25 @@ header article h1 {
   font-style: normal;
 }
 
+@media (max-width: 767px) {
+  .contact article address {
+    padding-left: 0px;
+    border: none;
+    margin-top: 20px;
+  }
+}
+
 .contact article address h4,
 .contact article address p {
   font-size: 1.7rem;
   font-weight: 700;
 }
 
-.contact article address p {
-  font-size: 1.7rem;
+@media (max-width: 767px) {
+  .contact article address h4,
+  .contact article address p {
+    font-size: 1.3rem;
+  }
 }
 
 footer {
