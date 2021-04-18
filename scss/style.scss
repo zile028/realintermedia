@@ -48,7 +48,8 @@ aside {
             margin: 0 auto;
             @media (max-width: 767px) {
                 margin: 0;
-                height: 80%;
+                height: 50px;
+                width: auto;
             }
         }
         @media (max-width: 767px) {
@@ -97,6 +98,9 @@ aside {
             background-color: $primaryViolet;
             transition: $transition;
         }
+        &.show {
+            right: 0;
+        }
         li {
             border-bottom: 3px solid $border;
             padding-top: 60px;
@@ -125,6 +129,7 @@ aside {
         text-align: right;
         width: 100%;
         margin-top: 60px;
+        transition: $transition;
         @media (max-width: 767px) {
             margin-top: 0px;
         }
@@ -139,6 +144,10 @@ aside {
             &:hover {
                 color: $fourthBg;
             }
+        }
+        &.hide {
+            transform: scaleY(0);
+            height: 0;
         }
     }
 }
