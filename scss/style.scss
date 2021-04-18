@@ -1,13 +1,28 @@
 @import "starter";
 @import "mixins";
+/* GLOBAL */
+h2 {
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+p {
+    color: $lightGray;
+    font-size: 1.3rem;
+}
+button {
+    @include btn(transparent, $lightGray);
+}
+/*------------------------------------------------*/
 
 body {
     @include flex(space-between, flex-start);
+    height: 100vh;
 }
 aside {
     @include flex(center, center, column);
-    flex: 0 0 450px;
-    min-height: 100vh;
+    flex: 0 0 25%;
+    height: 100%;
     background-color: $navColor;
     padding: 0px 50px;
     .logo {
@@ -56,6 +71,10 @@ aside {
 }
 main {
     flex: 1;
+    min-height: 100vh;
+    height: 100%;
+    overflow: auto;
+    scroll-behavior: smooth;
 }
 
 // header
@@ -64,18 +83,144 @@ header {
     min-height: 100vh;
     @include flex(center, flex-start, column);
     article {
+        width: 90%;
+        margin: 0 auto;
         h1 {
             color: $white;
             font-size: 5rem;
             margin-bottom: 40px;
         }
-        p {
-            color: $lightGray;
-            font-size: 1.7rem;
-            margin-bottom: 40px;
+    }
+}
+
+// services
+.services {
+    article {
+        @include flex(space-between, stretch);
+        &:nth-child(1) {
+            background-color: $firstBg;
         }
-        button {
-            @include btn(transparent, $lightGray);
+        &:nth-child(2) {
+            background-color: $secondBg;
+        }
+        &:nth-child(3) {
+            background-color: $thirdBg;
+        }
+        div {
+            &:first-child {
+                flex: 0 0 30%;
+            }
+            &:last-child {
+                @include flex(center, flex-start, column);
+                flex: 0 0 70%;
+                padding: 50px 0 50px 50px;
+                p {
+                    font-size: 1.3rem;
+                }
+            }
         }
     }
+}
+
+// whatWeDo
+.whatWeDo {
+    background-color: $fourthBg;
+    padding: $py;
+    .cards {
+        @include flex(space-between, center);
+        margin: 40px auto;
+        .wrapper {
+            flex: 1 0 50%;
+            padding: 150px 50px;
+            @include flex(flex-start, flex-start);
+            border: 2px solid $borderLightGray;
+            height: auto;
+            background-color: rgba($lightGray, 0.3);
+            div {
+                &:first-child {
+                    flex: 0 0 50px;
+                    width: 50px;
+                    height: 50px;
+                    background-color: $white;
+                    border-radius: 50%;
+                    text-align: center;
+                    margin-right: 30px;
+                    i {
+                        line-height: 50px;
+                        font-size: 2rem;
+                        color: $fourthBg;
+                    }
+                }
+                &:last-child {
+                    flex: 1;
+                    h3 {
+                        font-size: 2rem;
+                        line-height: 1;
+                        margin-bottom: 20px;
+                    }
+                    p {
+                        line-height: 1.7;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// contact
+.contact {
+    background-color: $fifthBg;
+    padding: $py;
+    article {
+        &:last-child {
+            @include flex(space-between, stretch);
+            margin-top: 20px;
+        }
+        form {
+            @include flex(space-between, center);
+            flex: 0 0 70%;
+            padding-right: 20px;
+            input {
+                flex: 0 0 48%;
+            }
+            textarea {
+                flex: 0 0 100%;
+                margin: 20px 0;
+                height: 400px;
+            }
+            input,
+            textarea {
+                padding: 20px;
+                background-color: $lightGray;
+                border-radius: 10px;
+                border: none;
+                outline: none;
+                font-size: 1.3rem;
+                font-family: $textFont;
+            }
+        }
+        address {
+            flex: 0 0 30%;
+            padding-left: 20px;
+            border-left: 2px solid $borderLightGray;
+            @include flex(space-around, flex-start, column);
+            font-style: normal;
+            h4,
+            p {
+                font-size: 1.7rem;
+                font-weight: 700;
+            }
+            p {
+                font-size: 1.7rem;
+            }
+        }
+    }
+}
+
+// footer
+footer {
+    background-color: rgba($fifthBg, 0.9);
+    padding: 50px 0;
+    text-align: center;
 }
