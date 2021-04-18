@@ -4,7 +4,8 @@ var menu = document.querySelector(".btnMenu > ul");
 var menuItem = document.querySelectorAll(".btnMenu > ul li");
 
 window.addEventListener("scroll", () => {
-  if (this.scrollY > 0) {
+  console.log(window.scrollY > 0 || window.innerWidth < 767);
+  if (window.scrollY > 0 && window.innerWidth < 767) {
     social.className = "social hide";
   } else {
     social.className = "social";

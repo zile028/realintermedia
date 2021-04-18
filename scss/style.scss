@@ -22,19 +22,17 @@ button {
 /*------------------------------------------------*/
 
 body {
-    @include flex(space-between, flex-start);
-    height: 100vh;
-    @media (max-width: 767px) {
-        flex-direction: column;
-        height: auto;
-    }
 }
 aside {
     @include flex(center, center, column);
-    flex: 0 0 25%;
     height: 100%;
     background-color: $navColor;
     padding: 0px 50px;
+    float: left;
+    width: 25%;
+    position: fixed;
+    top: 0;
+    left: 0;
     @media (max-width: 767px) {
         width: 100%;
         height: auto;
@@ -152,11 +150,14 @@ aside {
     }
 }
 main {
-    flex: 1;
     min-height: 100vh;
     height: 100%;
-    overflow: auto;
     scroll-behavior: smooth;
+    float: right;
+    width: 75%;
+    @media (max-width: 767px) {
+        width: 100%;
+    }
 }
 
 // header
